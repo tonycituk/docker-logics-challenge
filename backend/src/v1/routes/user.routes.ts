@@ -6,7 +6,7 @@ import * as UserController from "../../controllers/user.controller";
 const userRoutes = Router();
 
 userRoutes.post("/login", UserController.signIn);
-userRoutes.post("/register", UserController.createNewUser);
+userRoutes.post("/register", UserController.createNewUser); //postman
 userRoutes.get("/users", ensureAuthenticated, UserController.getAllUsers);
 userRoutes.get("/users/:id", ensureAuthenticated, UserController.getOneUser);
 userRoutes.put("/users/:id", ensureAuthenticated, UserController.updateOneUser);

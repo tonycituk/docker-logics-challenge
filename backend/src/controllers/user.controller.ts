@@ -50,6 +50,9 @@ export const signIn = async (req: Request, res: Response) => {
       email,
       password,
     });
+    logger.info({ email, password });
+
+    logger.info(token);
     return res.status(200).json({ token: token });
   } catch (error: any) {
     logger.warn(error);
