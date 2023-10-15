@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "strictNullChecks": false
+  }
+}
