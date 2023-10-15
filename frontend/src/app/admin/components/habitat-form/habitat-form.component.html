@@ -1,0 +1,47 @@
+<form [formGroup]="habitatDataForm" (ngSubmit)="create()"  class="w-full max-w-lg" action="">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+      <label for="size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Size</label>
+      <input type="number" id="size"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="size" required [(ngModel)]="habitatData.size">
+    </div>
+    <div class="w-full md:w-1/4 px-3">
+      <label for="capacity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Capacity</label>
+      <input type="number" id="capacity"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="capacity" required [(ngModel)]="habitatData.capacity">
+    </div>
+    <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
+      <label for="area" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Area</label>
+      <input type="Text" id="area"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="area" required [(ngModel)]="habitatData.area">
+    </div>
+    <div class="w-full md:w-1/4 px-3">
+      <label for="foodPercentage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">FoodPercentage</label>
+      <input type="number" id="foodPercentage"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="foodPercentage" required [(ngModel)]="habitatData.foodPercentage">
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/1 px-3 mb-6 md:mb-0">
+      <label for="zookeepers" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Zookeepers</label>
+      <input type="text" id="zookeepers"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="zookeepers" required [(ngModel)]="habitatData.zookeepers">
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/1 px-3">
+      <label for="animals" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Animals</label>
+      <input type="text" id="animals"
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        formControlName="animals" required [(ngModel)]="habitatData.animals">
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!habitatDataForm.valid"
+    class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">create</button>
+</form>

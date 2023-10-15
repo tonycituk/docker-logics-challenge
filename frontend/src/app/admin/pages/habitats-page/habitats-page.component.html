@@ -1,0 +1,44 @@
+<div class="container mx-auto py-2">
+  <table class="table-fixed border-separate border-spacing-2 border border-slate-400">
+    <thead>
+      <tr class="text">
+        <th class="border-spacing-1">id</th>
+        <th class="border-spacing-1">size</th>
+        <th class="border-spacing-1">capacity</th>
+        <th class="border-spacing-1">area</th>
+        <th class="border-spacing-1">food percentage</th>
+        <th class="border-spacing-1">zookeepers</th>
+        <th class="border-spacing-1">animals</th>
+        <th class="border-spacing-1">
+          <button type="button" class="btn bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            routerLink="/admin/createHabitat">
+            create
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let habitat of habitats">
+      <tr class="text">
+        <td class="border-spacing-1">{{ habitat.id }}</td>
+        <td class="border-spacing-1">{{ habitat.size }}</td>
+        <td class="border-spacing-1">{{ habitat.capacity }}</td>
+        <td class="border-spacing-1">{{ habitat.area }}</td>
+        <td class="border-spacing-1">{{ habitat.foodPercentage }}</td>
+        <td class="border-spacing-1">{{ habitat.zookeepers }}</td>
+        <td class="border-spacing-1">{{ habitat.animals }}</td>
+        <td>
+          <button type="button" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            routerLink="/admin/habitats/{{habitat.id}}">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            (click)="delete(habitat.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
