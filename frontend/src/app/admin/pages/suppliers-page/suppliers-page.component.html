@@ -1,0 +1,42 @@
+<div class="container mx-auto py-2">
+  <table class="table-fixed border-separate border-spacing-2 border border-slate-400">
+    <thead>
+      <tr class="text">
+        <th class="border-spacing-1">id</th>
+        <th class="border-spacing-1">name</th>
+        <th class="border-spacing-1">type</th>
+        <th class="border-spacing-1">email</th>
+        <th class="border-spacing-1">telephone</th>
+        <th class="border-spacing-1">address</th>
+        <th class="border-spacing-1">
+          <button type="button" class="btn bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            routerLink="/admin/createSupplier">
+            create
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let supplier of suppliers">
+      <tr class="text">
+        <td class="border-spacing-1">{{ supplier.id }}</td>
+        <td class="border-spacing-1">{{ supplier.name }}</td>
+        <td class="border-spacing-1">{{ supplier.type }}</td>
+        <td class="border-spacing-1">{{ supplier.email }}</td>
+        <td class="border-spacing-1">{{ supplier.telephone }}</td>
+        <td class="border-spacing-1">{{ supplier.address }}</td>
+        <td>
+          <button type="button" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            routerLink="/admin/supplier/{{supplier.id}}">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            (click)="delete(supplier.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
